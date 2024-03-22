@@ -13,6 +13,5 @@ const isPalindrome = (str) => {
   }
   return j;
 }
-console.log(isPalindrome("123321"));
 
 module.exports = isPalindrome
