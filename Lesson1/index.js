@@ -2,17 +2,15 @@
 
 const isPalindrome = (str) => {
   str=str.toLowerCase();
-  j=true;
   for (let i=0; i<=Math.floor((str.length-1)/2);i++){
     if(str[i]==str[str.length-1-i]){
       continue;
     }
     else{
-      j=false;
+      return false;
     }
   }
-  return j;
+  return true;
 }
-console.log(isPalindrome("123321"));
 
 module.exports = isPalindrome
