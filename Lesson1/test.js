@@ -1,7 +1,5 @@
 const isPalindrome = require("./index.js");
 
-console.log(isPalindrome(""))
-
 test('Test 1', () => {
     expect(isPalindrome("Шалаш")).toBe(true)
 })
