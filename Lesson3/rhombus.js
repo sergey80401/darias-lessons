@@ -58,6 +58,7 @@ array = [...array, ...array.reverse()];
     }
     array = [...array, Array(n).fill("0"), ...array.reverse()];
   }
-console.log(array);}
+return array;
+}
 
 module.exports = rhombus
