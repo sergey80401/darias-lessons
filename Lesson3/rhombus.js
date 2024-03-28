@@ -29,10 +29,35 @@
 // ]
 
 
+//var n = 6;
 const rhombus = (n) => {
-  // ТУТ
-  // ТВОЙ
-  // КОД
+  if (n%2==0){
+var array = [];
+var mid = Math.floor((n-1)/2);
+for (var i = 0; i<=mid; i++){
+  array[i]=[];
+  for (var j = 0; j<n; j++){
+    array[i][j]="0";
+    if (j<(mid-i)||j>mid+1+i){
+      array[i][j]=" ";
+    }
+  }
 }
+array = [...array, ...array.reverse()];
+  }
+  
+  else{
+    for (var i = 0; i<mid; i++){
+      array[i]=[];
+      for (var j = 0; j<n; j++){
+        array[i][j]="0";
+        if (j<(mid-i)||j>mid+i){
+          array[i][j]=" ";
+        }
+      }
+    }
+    array = [...array, Array(n).fill("0"), ...array.reverse()];
+  }
+console.log(array);}
 
 module.exports = rhombus
