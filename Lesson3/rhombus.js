@@ -31,9 +31,9 @@
 
 //var n = 6;
 const rhombus = (n) => {
-  if (n%2==0){
 var array = [];
 var mid = Math.floor((n-1)/2);
+if (n%2==0){
 for (var i = 0; i<=mid; i++){
   array[i]=[];
   for (var j = 0; j<n; j++){
@@ -51,7 +51,7 @@ array = [...array, ...array.reverse()];
       array[i]=[];
       for (var j = 0; j<n; j++){
         array[i][j]="0";
-        if (j<(mid-i)||j>mid+i){
+        if (j<(mid-i)||j>(mid+i)){
           array[i][j]=" ";
         }
       }
