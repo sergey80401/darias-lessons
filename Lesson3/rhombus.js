@@ -32,27 +32,20 @@
 const rhombus = (n) => {
   var array = [];
   var mid = Math.floor((n - 1) / 2);
-  if (n % 2 == 0) {
-    for (var i = 0; i < mid + 1; i++) {
-      array[i] = [];
-      for (var j = 0; j < n; j++) {
-        array[i][j] = "0";
-        if (j < mid - i || j > mid + 1 + i) {
-          array[i][j] = " ";
-        }
+
+  for (var i = 0; i < mid + 1 - n % 2; i++) {
+    array[i] = [];
+    for (var j = 0; j < n; j++) {
+      array[i][j] = "0";
+      if (j < mid - i || j > mid + 1 - n % 2 + i) {
+        array[i][j] = " ";
       }
     }
+  }
+
+  if (n % 2 == 0) {
     array = [...array, ...array.reverse()];
   } else {
-    for (var i = 0; i < mid; i++) {
-      array[i] = [];
-      for (var j = 0; j < n; j++) {
-        array[i][j] = "0";
-        if (j < mid - i || j > mid + i) {
-          array[i][j] = " ";
-        }
-      }
-    }
     array = [...array, Array(n).fill("0"), ...array.reverse()];
   }
   return array;
