@@ -26,10 +26,10 @@ const largestCommonSubstring = (str1, str2) => {
       }
   }
   array.push(substr);
+  var largestSubstring=array[0];
   for (k=1; k<array.length; k++){
-      largestSubstring=array[0];
       if (largestSubstring.length<array[k].length){
-          largestSubstring=array[k];
+      largestSubstring=array[k];
       }
   }
   return largestSubstring;
