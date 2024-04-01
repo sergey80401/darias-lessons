@@ -7,10 +7,32 @@
 // 
 // Результат выполнения функции: " нравится "
 
+//str1 = "ABC_A"
+//str2 = "CAB_BC_A"
 const largestCommonSubstring = (str1, str2) => {
-  // ТУТ
-  // ТВОЙ
-  // КОД
+  var array = [];
+  var substr="";
+  //String largestSubstring;
+  for (i=0; i<str1.length; i++){
+      for (j=0; j<str2.length; j++){
+          if (str1[i]==str2[j]){
+              var substr = substr+str1[i];
+              //array.push(substr);
+              i++;
+          }else{
+              array.push(substr);
+              substr="";
+          }
+      }
+  }
+  array.push(substr);
+  for (k=1; k<array.length; k++){
+      largestSubstring=array[0];
+      if (largestSubstring.length<array[k].length){
+          largestSubstring=array[k];
+      }
+  }
+  return largestSubstring;
 }
 
 module.exports = largestCommonSubstring
