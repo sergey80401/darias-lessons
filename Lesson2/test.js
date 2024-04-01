@@ -14,7 +14,7 @@ test('Test 3', () => {
 })
 
 test('Test 4', () => {
-    expect(largestCommonSubstring("ЫыЫЫЫЫЫЫыыы                      Пробелы", "Пробелы                      Пробелы")).toEqual("                      Пробелы")
+    expect(largestCommonSubstring("ЫыЫЫЫЫЫЫыыы                      Пробелы", "Пробелы                      Пробелы")).toEqual("ы                      Пробелы")
 })
 
 test('Test 5', () => {
