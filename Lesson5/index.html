@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
+  <head>
+    <title>Lesson 5</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="header">Lesson 5</h1>
+      <p id="greating">
+        Привет, Даша!!! Рад приветствовать тебя на Lesson5. Отныне некоторые
+        задачки будут решаться в браузере. Иногда тебе нужно будет что-то
+        поверстать. А иногда просто покодить
+      </p>
+      <p id="greating">
+        Я подумал, что будет прикольно, если я буду таким образом оформлять
+        задания. Ты сможешь дополнитьельно инспектировать страничку, смотреть
+        что я сделал и как я сделал. Таким образом можно фантомно впитывать
+        полезную информацию по JavaScript, HTML и CSS.
+      </p>
+      <p id="greating">
+        И так, твоя задача - реализовать функцию в файле "getRandomNumber.js",
+        подключить скрипт в тэге &lt;head&gt; по аналогии с тем, как я подключил
+        стили из файла "style.css". И сделать сайт, который мог бы генерировать
+        случайное число от 0 до 100. Это минимум
+      </p>
+      <div id="example">
+        <p>Вывод можешь сделать любым смособом</p>
+        <div style="display: flex; justify-content: space-around">
+          <button onClick='console.log("Случайное число")'>
+            console.log()
+          </button>
+          <button onClick='alert("Случайное число")'>alert()</button>
+          <div>
+            <button
+              onClick='document.getElementById("inputValue").value ? document.getElementById("inputValue").value = "" : document.getElementById("inputValue").value = "Случайное число"'
+            >
+              Отобразить в input`е
+            </button>
+            <span>&#8594;</span>
+            <input id="inputValue" type="text" />
+          </div>
+          <!-- Хуясе, не знал, что в onclick можно использовать тернарный оператор, если читаешь это погугли "js тернарный оператор (ну и раз уж ты тут, то и про 'event.target.value' будет неплохо почиатать. все равно с эти столкнемся потом)" -->
+          <div>
+            <button
+              onClick='document.getElementById("htmlValue").textContent ? document.getElementById("htmlValue").textContent = "" : document.getElementById("htmlValue").textContent = "Случайное число"'
+            >
+              Отобразить прямо в html
+            </button>
+            <span>&#8594;</span>
+            <span id="htmlValue"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -6,5 +6,4 @@ const getRandomNumber = (min, max) => {
   // КОД
   return 0;
 }
-
 module.exports = getRandomNumber
