@@ -10,9 +10,24 @@
 // Надо сделать такую функцию, которая сможет также !!!
 
 const normalizeText = (str) => {
-  // ТУТ
-  // ТВОЙ
-  // КОД
+  var str1;
+  for (i=0; i<str.length; i++){
+    switch(i){
+      case 0:
+        str1=str1+str[i].toUpperCase(); //делаем первую букву предложения заглавной
+        break
+      case ("."||"?"||"!") & ((i+1)==" "):
+        str1=str1+str[i+2].toUpperCase(); //делаем первую букву предложения заглавной
+        break
+      case ("."||"?"||"!"||",") & ((i+1)!=" "):
+        str1=str1+str[i]+" "; //добавляем пробел после знаков препинания, если после знаков препинания еще нет пробела
+        break
+      case str.length-1:
+        str1=str1+"."; //ставим точку в конце предложения
+        break
+    }
+  }
+  return str1;
 }
 
 module.exports = normalizeText
