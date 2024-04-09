@@ -9,25 +9,46 @@
 // 
 // Надо сделать такую функцию, которая сможет также !!!
 
+var str = "этот текст написан.но не очень. здесь вообще пробел";
 const normalizeText = (str) => {
-  var str1;
-  for (i=0; i<str.length; i++){
-    switch(i){
-      case 0:
-        str1=str1+str[i].toUpperCase(); //делаем первую букву предложения заглавной
-        break
-      case ("."||"?"||"!") & ((i+1)==" "):
-        str1=str1+str[i+2].toUpperCase(); //делаем первую букву предложения заглавной
-        break
-      case ("."||"?"||"!"||",") & ((i+1)!=" "):
-        str1=str1+str[i]+" "; //добавляем пробел после знаков препинания, если после знаков препинания еще нет пробела
-        break
-      case str.length-1:
-        str1=str1+str[i]+"."; //ставим точку в конце предложения
-        break
+  var str1 = str[0].toUpperCase(); //делаем первую букву по дефолту заглавной
+  for (i = 1; i < str.length; i++){
+    switch(str[i]){
+      case ("?"):
+        str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем "?", ставим после пробел и делаем первую букву предложения заглавной
+        i++;
+        //console.log(i, str1, "?");
+        break;
+      case ("!"):
+        str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем "!", ставим после пробел и делаем первую букву предложения заглавной
+        i++;
+        //console.log(i, str1, "!");
+        break;
+      case ("."):
+        str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем ".", ставим после пробел и делаем первую букву предложения заглавной
+        i++;
+        //console.log(i, str1);
+        break;
+      case (","):
+        str1 = str1 + str[i] + " "; //если встречаем ",", ставим после пробел
+        //console.log(i, str1);
+        break;
+      case (";"):
+        str1 = str1 + str[i] + " "; //если встречаем ";", ставим после пробел
+        //console.log(i, str1);
+        break;
+      case (":"):
+        str1 = str1 + str[i] + " "; //если встречаем ":", ставим после пробел
+        //console.log(i, str1);
+        break;
+      default:
+        str1 = str1 + str[i]; //если все ок, просто присоединяем символ из str к str1
+        break;
     }
   }
-  return str1;
+  str1 = str1 + "."; //ставим точку в конце предложения
+  return str1.replaceAll("  ", " ");
 }
+console.log(normalizeText(str));
 
 module.exports = normalizeText
