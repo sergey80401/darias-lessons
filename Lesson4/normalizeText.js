@@ -43,5 +43,5 @@ const normalizeText = (str) => {
   str1 = str1 + "."; //ставим точку в конце предложения
   return str1.replaceAll("  ", " ");
 }
-console.log(normalizeText(str));
+//console.log(normalizeText(str));
 module.exports = normalizeText
