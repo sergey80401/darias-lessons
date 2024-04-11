@@ -10,36 +10,26 @@
 // Надо сделать такую функцию, которая сможет также !!!
 
 //var str = "этот текст написан.но не очень. здесь вообще пробел";
+
+punctuationMarks = ",;:-"
+endOfSentence = "?!."
 const normalizeText = (str) => {
   var str1 = str[0].toUpperCase(); //делаем первую букву по дефолту заглавной
+  
   for (i = 1; i < str.length; i++) {
-    switch (str[i]) {
-      case "?":
-        str1 = str1 + str[i] + " " + str[i + 1].toUpperCase(); //если встречаем "?", ставим после пробел и делаем первую букву предложения заглавной
-        i++;
-        break;
-      case "!":
-        str1 = str1 + str[i] + " " + str[i + 1].toUpperCase(); //если встречаем "!", ставим после пробел и делаем первую букву предложения заглавной
-        i++;
-        break;
-      case ".":
-        str1 = str1 + str[i] + " " + str[i + 1].toUpperCase(); //если встречаем ".", ставим после пробел и делаем первую букву предложения заглавной
-        i++;
-        break;
-      case ",":
-        str1 = str1 + str[i] + " "; //если встречаем ",", ставим после пробел
-        break;
-      case ";":
-        str1 = str1 + str[i] + " "; //если встречаем ";", ставим после пробел
-        break;
-      case ":":
-        str1 = str1 + str[i] + " "; //если встречаем ":", ставим после пробел
-        break;
-      default:
-        str1 = str1 + str[i]; //если все ок, просто присоединяем символ из str к str1
-        break;
+
+    //если встречаем что-то из этого "?!.", ставим после пробел и делаем первую букву предложения заглавной
+    if (endOfSentence.includes(str[i])) {
+      str1 = str1 + str[i] + " " + str[i + 1].toUpperCase(); 
+      i++;
+      continue;
+    } else if (punctuationMarks.includes(str[i])) {
+      str1 = str1 + str[i] + " "; //если встречаем ",", ставим после пробел
+      continue;
     }
+    str1 = str1 + str[i]; //если все ок, просто присоединяем символ из str к str1
   }
+  
   str1 = str1 + "."; //ставим точку в конце предложения
 
   while (str1.includes("  "))
