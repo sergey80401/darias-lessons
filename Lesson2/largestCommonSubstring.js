@@ -29,7 +29,7 @@ const largestCommonSubstring = (str1, str2) => {
     }
   }
   array.push(substr);
-  console.log(array.length);
+  
   var largestSubstring = array[0];
   for (k = 1; k < array.length; k++) {
     if (largestSubstring.length < array[k].length) {
@@ -38,10 +38,5 @@ const largestCommonSubstring = (str1, str2) => {
   }
   return largestSubstring;
 };
-console.log(
-  largestCommonSubstring(
-    "Даше нравится кодить на JavaScript",
-    "Программистам на Java нравится пить кофе"
-  )
-);
+
 module.exports = largestCommonSubstring;
