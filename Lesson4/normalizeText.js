@@ -11,7 +11,7 @@
 
 //var str = "этот текст написан.но не очень. здесь вообще пробел";
 
-punctuationMarks = ",;:-"
+punctuationMarks = ",;:"
 endOfSentence = "?!."
 const normalizeText = (str) => {
   var str1 = str[0].toUpperCase(); //делаем первую букву по дефолту заглавной
