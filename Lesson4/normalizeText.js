@@ -9,7 +9,7 @@
 // 
 // Надо сделать такую функцию, которая сможет также !!!
 
-var str = "этот текст написан.но не очень. здесь вообще пробел";
+//var str = "этот текст написан.но не очень. здесь вообще пробел";
 const normalizeText = (str) => {
   var str1 = str[0].toUpperCase(); //делаем первую букву по дефолту заглавной
   for (i = 1; i < str.length; i++){
@@ -17,29 +17,23 @@ const normalizeText = (str) => {
       case ("?"):
         str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем "?", ставим после пробел и делаем первую букву предложения заглавной
         i++;
-        //console.log(i, str1, "?");
         break;
       case ("!"):
         str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем "!", ставим после пробел и делаем первую букву предложения заглавной
         i++;
-        //console.log(i, str1, "!");
         break;
       case ("."):
         str1 = str1 + str[i] + " " + str[i+1].toUpperCase(); //если встречаем ".", ставим после пробел и делаем первую букву предложения заглавной
         i++;
-        //console.log(i, str1);
         break;
       case (","):
         str1 = str1 + str[i] + " "; //если встречаем ",", ставим после пробел
-        //console.log(i, str1);
         break;
       case (";"):
         str1 = str1 + str[i] + " "; //если встречаем ";", ставим после пробел
-        //console.log(i, str1);
         break;
       case (":"):
         str1 = str1 + str[i] + " "; //если встречаем ":", ставим после пробел
-        //console.log(i, str1);
         break;
       default:
         str1 = str1 + str[i]; //если все ок, просто присоединяем символ из str к str1
