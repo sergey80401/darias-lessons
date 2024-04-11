@@ -20,17 +20,17 @@ const normalizeText = (str) => {
 
     //если встречаем что-то из этого "?!.", ставим после пробел и делаем первую букву предложения заглавной
     if (endOfSentence.includes(str[i])) {
-      str1 = str1 + str[i] + " " + str[i + 1].toUpperCase(); 
+      str1 += str[i] + " " + str[i + 1].toUpperCase(); 
       i++;
       continue;
     } else if (punctuationMarks.includes(str[i])) {
-      str1 = str1 + str[i] + " "; //если встречаем ",", ставим после пробел
+      str1 += str[i] + " "; //если встречаем ",", ставим после пробел
       continue;
     }
-    str1 = str1 + str[i]; //если все ок, просто присоединяем символ из str к str1
+    str1 += str[i]; //если все ок, просто присоединяем символ из str к str1
   }
   
-  str1 = str1 + "."; //ставим точку в конце предложения
+  str1 += "."; //ставим точку в конце предложения
 
   while (str1.includes("  "))
     str1 = str1.replaceAll("  ", " ");
