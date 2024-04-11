@@ -44,5 +44,4 @@ const normalizeText = (str) => {
   return str1.replaceAll("  ", " ");
 }
 console.log(normalizeText(str));
-
 module.exports = normalizeText
