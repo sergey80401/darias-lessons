@@ -10,4 +10,4 @@ const getRandomNumber = (min, max) => {
   //return 0;
 }
 //console.log(getRandomNumber(-5, 0));
-//module.exports = getRandomNumber
+module.exports = getRandomNumber
