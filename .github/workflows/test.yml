@@ -12,6 +12,6 @@ jobs:
     - name: ls
       run: ls
     - name: Install modules
-      run: npm install
+      run: cd ./0 && npm install
     - name: Run tests
       run: cd ./0 && npm run test
