@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "class-transformer": "^0.5.1",
     "vue": "^3.4.29"
   },
   "devDependencies": {

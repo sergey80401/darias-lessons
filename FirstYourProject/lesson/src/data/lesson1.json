@@ -1,0 +1,14 @@
+[
+  {
+    "index": 1,
+    "title": "string",
+    "imagePath": "../assets/slides/1.jpg",
+    "text": "dqdqdq"
+  },
+  {
+    "index": 2,
+    "title": "ЭТО ВТОРОЙ!!!",
+    "imagePath": "../assets/slides/2.jpg",
+    "text": "dqdqdq"
+  }
+]
