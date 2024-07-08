@@ -10,8 +10,6 @@ const posts = ref<Post[]>();
 
 onBeforeMount(() => {
   posts.value = JSON.parse(JSON.stringify(lesson1, null, 2));
-//   console.log(posts.value);
-//   console.log(imageUrl);
 });
 const imageUrl = computed(
   () => new URL(posts.value[current.value - 1].imagePath, import.meta.url).href
@@ -31,7 +29,7 @@ const nextClick = () => {
       <img :src="backNext" />
     </div>
     <Slide
-      :index="posts[current - 1].index"
+      :index="current"
       :title="posts[current - 1].title"
       :imagePath="imageUrl"
       :text="posts[current - 1].text"

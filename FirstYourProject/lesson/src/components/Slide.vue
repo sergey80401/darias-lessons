@@ -40,7 +40,7 @@ const props = defineProps<{
   padding: 1rem;
   border-radius: 1rem;
   background-color: #99ccff;
-  height: 600px;
+  height: fit-content;
   max-height: 900px;
   max-width: 1400px;
   width: 100%;
@@ -53,7 +53,7 @@ const props = defineProps<{
   align-items: center;
 }
 
-.postImage {
+.postImage {  
   object-fit: cover;
   max-height: auto;
   max-width: auto;
@@ -63,6 +63,6 @@ const props = defineProps<{
 .postText {
   width: 45%;
   resize: none;
-  height: 100%;
+  height: 600px;
 }
 </style>
