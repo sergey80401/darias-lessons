@@ -173,5 +173,10 @@
     "title": "Создаем vue приложение",
     "imagePath": "../assets/slides/35.jpg",
     "text": "Удалим css`ки из папки assets"
+  },
+  {
+    "title": "Создаем vue приложение",
+    "imagePath": "../assets/slides/36.jpg",
+    "text": "Также удалим импорт этой css`ки из файла main.ts"
   }
 ]
